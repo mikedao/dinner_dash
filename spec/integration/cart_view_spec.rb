@@ -8,7 +8,7 @@ describe "the cart view", type: :feature do
     visit cart_path
 
     expect(page).to have_content("Your cart is empty!")
-    expect(page).to_not have_button("Checkout")
+    expect(page).to_not have_link("Checkout")
   end
 
   it "displays cart items" do

@@ -78,4 +78,21 @@ describe "the guest view", type: :feature do
       end
     end
   end
+
+  describe "the not allowed views" do
+    xit "does not allow guest access to the admin page" do
+      visit admin_path
+      expect(current_path).to eq(root_path)
+    end
+
+    xit "does not allow guest access to user pages" do
+      visit user_path(1)
+      expect(current_path).to eq(root_path)
+    end
+
+    xit "does not allow guest access to the checkout" do
+      visit order_path
+      expect(current_path).to eq(root_path)
+    end
+  end
 end
